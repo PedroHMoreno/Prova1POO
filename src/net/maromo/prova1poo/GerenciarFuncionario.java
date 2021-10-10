@@ -147,7 +147,7 @@ public class GerenciarFuncionario {
                 funcionario.demitirFuncionario(estaAtivo);
                 return;
             }
-            if (funcionario.getIdFunc()!=codigo && funcionario.getEstaAtivo() == true){
+            if (funcionario.getIdFunc() != codigo && funcionario.getEstaAtivo() == true){
                 System.out.println("ERRO - ID INVALIDO!");
                 System.out.println("FUNCIONARIO NAO ENCONTRADO!");
             }
@@ -257,11 +257,12 @@ public class GerenciarFuncionario {
                         empresa.mostrarFuncionariosAtivos();
                     }
                     if (funcionario.getIdFunc() != codigo2 && funcionario.getEstaAtivo() == true) {
-                        empresa.contemFuncionario(false);
+                        boolean achei = false;
+                        empresa.contemFuncionario(achei);
                     }
                 }
-                return;
-            } else {
+
+            } if (empresa.getIdEmpresa() != codigo) {
                 System.out.println("ERRO - ID INVALIDO!");
                 System.out.println("EMPRESA NAO ENCONTRADA!");
                 return;
